@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>FoxQL</title>
+    </head>
+    <body>
+        <script src = "https://cdn.jsdelivr.net/npm/foxql@latest/build/foxql.min.js"></script>
+        <script>
+            let client = foxql.client;
+            
+            client.pushEvents([
+                'onSearch',
+                'onDocument'
+            ])
+
+            client.openNativeCollections();
+
+            client.open();
+
+        </script>
+        <!-- FoxQL - Client -->
+    </body>
+</html>

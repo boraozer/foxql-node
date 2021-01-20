@@ -1,0 +1,24 @@
+{
+  "name": "foxql-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon index.js",
+    "start" : "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boraozer/foxql-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boraozer/foxql-node/issues"
+  },
+  "homepage": "https://github.com/boraozer/foxql-node#readme",
+  "dependencies": {
+    "puppeteer": "^5.5.0"
+  }
+}
