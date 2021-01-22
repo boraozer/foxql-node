@@ -1,3 +1,5 @@
+'use-strict';
+
 const puppeteer = require('puppeteer');    
 
 const clientPages = {
@@ -13,10 +15,8 @@ class foxqlNode {
     browserOptions = {
         defaultViewport: null,
         args: [
-            "--incognito",
             "--no-sandbox",
-            "--single-process",
-            "--no-zygote"
+            "--single-process"
         ]
     };
 
