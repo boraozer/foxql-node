@@ -10,7 +10,12 @@ class foxqlNode {
     browser;
     pages = {};
 
-    browserOptions = {};
+    browserOptions = {
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+        ]
+    };
 
     constructor({browserOptions})
     {
