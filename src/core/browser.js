@@ -17,7 +17,8 @@ class foxqlNode {
         args: [
             "--no-sandbox",
             "--single-process"
-        ]
+        ],
+        ignoreDefaultArgs: ['--disable-extensions']
     };
 
     constructor({browserOptions})
