@@ -11,9 +11,12 @@ class foxqlNode {
     pages = {};
 
     browserOptions = {
+        defaultViewport: null,
         args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
+            "--incognito",
+            "--no-sandbox",
+            "--single-process",
+            "--no-zygote"
         ]
     };
 
