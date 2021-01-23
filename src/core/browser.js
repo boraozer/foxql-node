@@ -47,6 +47,8 @@ class foxqlNode {
         const page = await this.browser.newPage();   
         await page.goto(pagePath)
 
+        page.on('console', consoleObj => console.log(consoleObj.text()));
+
         this.pages[pageName] = page;
     }
 
