@@ -13,6 +13,9 @@ app.use(bodyParser.json());
 
 app.post('/push', function (req, res) {
     documentList.push(req.body);
+    return res.json({
+        status : true
+    });
 })
 
 app.get('/pop', function (req, res){
