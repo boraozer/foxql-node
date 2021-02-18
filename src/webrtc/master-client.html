@@ -18,30 +18,27 @@
 
             client.open();
 
-        
-            function documentListener(documents)
-            {
+            const queryObject = {
+                limit : 2,
+                collection : 'entrys'
+            };
+
+            setInterval(async ()=>{
+
+                const query = await client.sendEvent(queryObject, {
+                    timeOut : 1500, // destroy 1.2s listener
+                    peerListener : 'onRandom'
+                });
+                
+                if(query.count <= 0) {
+                    return false;
+                }
                 const index = client.database.useCollection('entrys');
-                documents.forEach(document => {
-                    index.addDoc({
-                        title : document.title,
-                        content : document.content
-                    });
+                query.results.forEach( item =>{
+                    index.addDoc(item.doc);
                 });
 
                 console.log('Document count', index.documentLength)
-                
-            }
-
-
-            setInterval(()=>{
-
-                client.randomDocument({
-                    limit : 2,
-                    collection : 'entrys',
-                    timeOut : 1000
-                }, documentListener);
-
             }, 1000 * 9);
 
             setTimeout(() => {
